@@ -6,7 +6,6 @@ def print_board(board):
         print("-" * 9)
 
 def check_winner(board):
-    # Check rows, columns, and diagonals for a winner
     for row in board:
         if row[0] == row[1] == row[2] and row[0] != ' ':
             return row[0]
@@ -72,7 +71,6 @@ def main():
     print_board(board)
 
     while True:
-        # Player's move
         try:
             move = input("Enter your move (row and column separated by a space, e.g., '1 2'): ").split()
             row, col = int(move[0]) - 1, int(move[1]) - 1
@@ -93,7 +91,6 @@ def main():
             print("It's a draw!")
             break
 
-        # AI's move
         ai_move = best_move(board)
         if ai_move:
             board[ai_move[0]][ai_move[1]] = 'O'
